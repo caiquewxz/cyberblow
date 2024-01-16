@@ -7,14 +7,14 @@ public class CharacterMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpStrength = 10f;
 
-    Rigidbody2D rb;
+    Rigidbody rb;
     bool onGround;
     Transform checkGround;
     LayerMask groundMask;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         checkGround = transform.Find("CheckGround");
         groundMask = LayerMask.GetMask("Ground");
     }
@@ -28,7 +28,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (onGround && Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpStrength, ForceMode.Impulse);
         }
     }
 }

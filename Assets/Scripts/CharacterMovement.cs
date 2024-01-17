@@ -24,9 +24,9 @@ public class CharacterMovement : MonoBehaviour
         Collider[] collidingFloor = Physics.OverlapSphere(checkGround.position, 0.2f, groundMask);
         onGround = collidingFloor.Length > 0;
 
-        float horizontalMovement = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(horizontalMovement * speed, rb.velocity.y);
-        
+        float horizontalMovement = -Input.GetAxis("Horizontal");
+        Vector3 desiredMovement = new Vector3(horizontalMovement * speed * Time.deltaTime, 0, 0);
+        transform.Translate(desiredMovement);
         
         if (onGround && Input.GetButtonDown("Jump"))
         {

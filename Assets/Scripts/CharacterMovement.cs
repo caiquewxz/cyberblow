@@ -12,17 +12,21 @@ public class CharacterMovement : MonoBehaviour
     Transform checkGround;
     LayerMask groundMask;
 
+    Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         checkGround = transform.Find("CheckGround");
         groundMask = LayerMask.GetMask("Ground");
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         Collider[] collidingFloor = Physics.OverlapSphere(checkGround.position, 0.2f, groundMask);
         onGround = collidingFloor.Length > 0;
+        animator.SetBool("InAir", !onGround);
 
         float horizontalMovement = -Input.GetAxis("Horizontal");
         Vector3 desiredMovement = new Vector3(horizontalMovement * speed * Time.deltaTime, 0, 0);

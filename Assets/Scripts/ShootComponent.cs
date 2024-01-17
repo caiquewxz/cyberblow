@@ -11,10 +11,13 @@ public class ShootComponent : MonoBehaviour
 
     Rigidbody rb;
 
+    Animator animator;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -38,6 +41,7 @@ public class ShootComponent : MonoBehaviour
 
     public void Shoot(Vector3 bulletRotation)
     {
+        PlayShootingAnimation();
         Projectile newProjecile = Instantiate<Projectile>(bulletPrefab, firePoint.position, Quaternion.identity);
         newProjecile.direction = bulletRotation;
 
@@ -47,6 +51,11 @@ public class ShootComponent : MonoBehaviour
     {
         rb.AddForce(direction * -1 * impulseForce, ForceMode.Impulse);
         Debug.Log(direction * -1 * impulseForce);
+    }
+
+    void PlayShootingAnimation()
+    {
+        animator?.SetTrigger("Shoot");
     }
 
 

@@ -21,11 +21,13 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        onGround = Physics2D.OverlapCircle(checkGround.position, 0.2f, groundMask);
+        Collider[] collidingFloor = Physics.OverlapSphere(checkGround.position, 0.2f, groundMask);
+        onGround = collidingFloor.Length > 0;
 
         float horizontalMovement = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(horizontalMovement * speed, rb.velocity.y);
-
+        
+        
         if (onGround && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector2.up * jumpStrength, ForceMode.Impulse);

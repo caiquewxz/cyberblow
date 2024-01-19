@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpStrength = 10f;
+    [SerializeField] Transform playerMesh;
 
     Rigidbody rb;
     bool onGround;
@@ -29,12 +30,39 @@ public class CharacterMovement : MonoBehaviour
         animator.SetBool("InAir", !onGround);
 
         float horizontalMovement = -Input.GetAxis("Horizontal");
+        
+        RotationControl(horizontalMovement);
+
         Vector3 desiredMovement = new Vector3(horizontalMovement * speed * Time.deltaTime, 0, 0);
         transform.Translate(desiredMovement);
+
         
         if (onGround && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector2.up * jumpStrength, ForceMode.Impulse);
         }
+    }
+
+    void RotationControl(float horizontalMovement)
+    {
+        if(horizontalMovement < 0)
+        {
+            TurnRight();
+        }
+        else if(horizontalMovement > 0)
+        {
+            TurnLeft();
+        }
+    }
+
+    void TurnRight()
+    {
+        playerMesh.transform.rotation = Quaternion.Euler(0, 90, 0);
+
+    }
+
+    void TurnLeft()
+    {
+        playerMesh.transform.rotation = Quaternion.Euler(0, -90, 0);
     }
 }

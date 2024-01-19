@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42b3beeda001aa4b95d0c49c76085c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 30
   lifeTime: 2
+  trailPrefab: {fileID: 947250871755532473, guid: 13594c31453df7640aa68e9ddf945de9, type: 3}
   direction: {x: 0, y: 0, z: 0}

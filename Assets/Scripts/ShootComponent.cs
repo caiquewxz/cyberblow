@@ -8,6 +8,7 @@ public class ShootComponent : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] Projectile bulletPrefab;
     [SerializeField] float impulseForce = 10f;
+    [SerializeField] GameObject particlePrefab;
 
     Rigidbody rb;
 
@@ -42,6 +43,7 @@ public class ShootComponent : MonoBehaviour
     public void Shoot(Vector3 bulletRotation)
     {
         PlayShootingAnimation();
+        SpawnShootParticle();
         Projectile newProjecile = Instantiate<Projectile>(bulletPrefab, firePoint.position, Quaternion.identity);
         newProjecile.direction = bulletRotation;
 
@@ -58,5 +60,13 @@ public class ShootComponent : MonoBehaviour
         animator?.SetTrigger("Shoot");
     }
 
+    void SpawnShootParticle()
+    {
+        if (particlePrefab != null)
+        {
+            Instantiate(particlePrefab, firePoint);
+            Destroy(particlePrefab, 1f);
+        }
+    }
 
 }

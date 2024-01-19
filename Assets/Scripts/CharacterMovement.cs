@@ -31,7 +31,6 @@ public class CharacterMovement : MonoBehaviour
 
         float horizontalMovement = -Input.GetAxis("Horizontal");
         
-        RotationControl(horizontalMovement);
 
         Vector3 desiredMovement = new Vector3(horizontalMovement * speed * Time.deltaTime, 0, 0);
         transform.Translate(desiredMovement);
@@ -41,15 +40,18 @@ public class CharacterMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpStrength, ForceMode.Impulse);
         }
+
+        RotationControl();
     }
 
-    void RotationControl(float horizontalMovement)
+    void RotationControl()
     {
-        if(horizontalMovement < 0)
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (mousePos.x > transform.position.x)
         {
             TurnRight();
         }
-        else if(horizontalMovement > 0)
+        else if(mousePos.x < transform.position.x)
         {
             TurnLeft();
         }

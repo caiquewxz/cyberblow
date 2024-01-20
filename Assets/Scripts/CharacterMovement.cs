@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpStrength = 10f;
     [SerializeField] Transform playerMesh;
+    [SerializeField] float maxSpeed = 40;
 
     Rigidbody rb;
     bool onGround;
@@ -40,10 +41,18 @@ public class CharacterMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpStrength, ForceMode.Impulse);
         }
-
+        LimitVelocity();
         RotationControl();
     }
 
+    void LimitVelocity()
+    {
+        if(rb.velocity.magnitude >= maxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+        Debug.Log("Velocity: " + rb.velocity.magnitude);
+    }
     void RotationControl()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

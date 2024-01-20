@@ -372,6 +372,10 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 8.91
       objectReference: {fileID: 0}
+    - target: {fileID: 7182376112911772791, guid: 0dd8f16fff26029468eec9d140730dc9, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7715402111867971026, guid: 0dd8f16fff26029468eec9d140730dc9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.27

@@ -6,9 +6,10 @@ using UnityEngine;
 public class ShootComponent : MonoBehaviour
 {
     [SerializeField] Transform firePoint;
-    [SerializeField] Projectile bulletPrefab;
     [SerializeField] float impulseForce = 10f;
     [SerializeField] GameObject particlePrefab;
+
+    public Projectile bulletPrefab;
 
     Rigidbody rb;
 

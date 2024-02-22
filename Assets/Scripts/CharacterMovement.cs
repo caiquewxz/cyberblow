@@ -7,7 +7,7 @@ public class CharacterMovement : MonoBehaviour
     public float speed = 5f;
     public float jumpStrength = 10f;
     [SerializeField] Transform playerMesh;
-    [SerializeField] float maxSpeed = 40;
+    [SerializeField] float maxSpeed = 80;
 
     Rigidbody rb;
     bool onGround;

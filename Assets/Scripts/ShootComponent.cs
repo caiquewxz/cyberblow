@@ -8,6 +8,10 @@ public class ShootComponent : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] float impulseForce = 10f;
     [SerializeField] GameObject particlePrefab;
+    [SerializeField] bool isMousePressed = false;
+    [SerializeField] float mouseTimePressed = 0f;
+
+    float impulseParameter = 0f;
 
     public Projectile bulletPrefab;
 
@@ -24,11 +28,32 @@ public class ShootComponent : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
+            mouseTimePressed += Time.deltaTime;
+
+            if(mouseTimePressed < 1f)
+            {
+                impulseParameter = 1f;
+            }
+            else if (mouseTimePressed > 1.5f) 
+            {
+                impulseParameter = 10f;
+            }
+            else if (mouseTimePressed > 3f)
+            {
+                impulseParameter = 20f;
+            }
+
+        }
+
+        if(Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            Debug.Log(impulseParameter);
+            mouseTimePressed = 0f;
             Vector3 bulletRotation = GetBulletRotation();
             Shoot(bulletRotation);
-            ThrowCharacter(bulletRotation);
+            ThrowCharacter(bulletRotation, impulseParameter);
         }
     }
 
@@ -50,10 +75,11 @@ public class ShootComponent : MonoBehaviour
 
     }
 
-    void ThrowCharacter(Vector3 direction)
+    void ThrowCharacter(Vector3 direction, float timePressed)
     {
-        rb.AddForce(direction * -1 * impulseForce, ForceMode.Impulse);
+        rb.AddForce(direction * -1 * impulseForce * timePressed, ForceMode.Impulse);
         Debug.Log(direction * -1 * impulseForce);
+        impulseParameter = 0f;
     }
 
     void PlayShootingAnimation()

@@ -51,7 +51,6 @@ public class CharacterMovement : MonoBehaviour
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
-        Debug.Log("Velocity: " + rb.velocity.magnitude);
     }
     void RotationControl()
     {

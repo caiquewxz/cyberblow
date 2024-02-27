@@ -8,7 +8,6 @@ public class ShootComponent : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] float impulseForce = 10f;
     [SerializeField] GameObject particlePrefab;
-    [SerializeField] bool isMousePressed = false;
     [SerializeField] float mouseTimePressed = 0f;
 
     float impulseParameter = 0f;
@@ -49,7 +48,6 @@ public class ShootComponent : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {
-            Debug.Log(impulseParameter);
             mouseTimePressed = 0f;
             Vector3 bulletRotation = GetBulletRotation();
             Shoot(bulletRotation);
@@ -78,7 +76,6 @@ public class ShootComponent : MonoBehaviour
     void ThrowCharacter(Vector3 direction, float timePressed)
     {
         rb.AddForce(direction * -1 * impulseForce * timePressed, ForceMode.Impulse);
-        Debug.Log(direction * -1 * impulseForce);
         impulseParameter = 0f;
     }
 

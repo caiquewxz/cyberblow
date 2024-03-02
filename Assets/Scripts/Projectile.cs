@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] bool canTpOnRicochet = false;
     [SerializeField] float speed = 10f;
     [SerializeField] float lifeTime = 2f;
     [SerializeField] GameObject trailPrefab;
 
     public Vector3 direction;
+    Teleport teleportScript;
 
     void Start()
-    { 
-        if(trailPrefab != null)
+    {
+        teleportScript = GetComponent<Teleport>();
+
+        if (trailPrefab != null)
         {
             Instantiate(trailPrefab, this.gameObject.transform);
         }
-        
+
         Destroy(gameObject, lifeTime);
     }
 
@@ -29,11 +33,14 @@ public class Projectile : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Plane"))
         {
-            Debug.Log("colidiu");
             Vector3 normal = other.contacts[0].normal;
-            Debug.Log("Direction: " + direction);
             direction = Vector3.Reflect(direction, normal).normalized;
-            Debug.Log("New Direction: " + direction);
+        }
+
+        if (canTpOnRicochet)
+        {
+            teleportScript.TeleportToBulletCollision(transform.position);
+            Destroy(gameObject);
         }
     }
 }

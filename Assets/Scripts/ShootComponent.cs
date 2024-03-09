@@ -88,8 +88,9 @@ public class ShootComponent : MonoBehaviour
     {
         if (particlePrefab != null)
         {
+            var copy = Instantiate(particlePrefab, firePoint);
             Instantiate(particlePrefab, firePoint);
-            Destroy(particlePrefab, 1f);
+            Destroy(copy, 3f);
         }
     }
 

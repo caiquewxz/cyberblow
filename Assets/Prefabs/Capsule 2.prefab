@@ -101,7 +101,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42b3beeda001aa4b95d0c49c76085c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTpOnRicochet: 0
   speed: 30
   lifeTime: 2
   trailPrefab: {fileID: 947250871755532473, guid: 975c4e0884b79f04b814bc058ee67e90, type: 3}
@@ -137,3 +138,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a480db4b735c46543bd792f0439a00e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTpOnRicochet: 1

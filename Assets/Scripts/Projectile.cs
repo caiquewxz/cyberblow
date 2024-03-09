@@ -31,8 +31,9 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Plane"))
+        if (other.gameObject.CompareTag("Plane") || other.gameObject.layer == LayerMask.GetMask("ground"))
         {
+            Debug.Log("colidiu");
             Vector3 normal = other.contacts[0].normal;
             direction = Vector3.Reflect(direction, normal).normalized;
         }

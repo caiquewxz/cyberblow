@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 459575035608767613}
   - component: {fileID: 9098304346372231842}
   - component: {fileID: 2081679616766411136}
+  - component: {fileID: 711221410738316957}
   m_Layer: 0
   m_Name: CyborgEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +100,36 @@ MonoBehaviour:
   player: {fileID: 0}
   timeBetweenEachProjectile: 2
   triggerDistance: 5
+--- !u!114 &711221410738316957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371253000641142697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb544e893f3eeae429d76c1c304c68ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
+  MaxHealth: 100
+  OnDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 711221410738316957}
+        m_TargetAssemblyTypeName: HealthComponent, Assembly-CSharp
+        m_MethodName: DestroyItself
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isDead: 0
 --- !u!1001 &59183145048142265
 PrefabInstance:
   m_ObjectHideFlags: 0

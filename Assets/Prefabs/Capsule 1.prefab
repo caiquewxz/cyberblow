@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4857629223017229159}
   - component: {fileID: 6060352033910618031}
   - component: {fileID: 6794296110198529133}
-  - component: {fileID: -6872743022764476877}
+  - component: {fileID: 5324257386026863216}
   - component: {fileID: 2300734943447743878}
   - component: {fileID: -8016468867592491408}
   m_Layer: 0
@@ -110,7 +110,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-6872743022764476877
+--- !u!114 &5324257386026863216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,13 +119,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8721075095853925010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e42b3beeda001aa4b95d0c49c76085c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c7c4f20e689f6c4cbc5bb48dbbb341b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canTpOnRicochet: 0
   speed: 30
   lifeTime: 2
   trailPrefab: {fileID: 947250871755532473, guid: 13594c31453df7640aa68e9ddf945de9, type: 3}
+  damage: 100
   direction: {x: 0, y: 0, z: 0}
 --- !u!54 &2300734943447743878
 Rigidbody:

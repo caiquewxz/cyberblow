@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] float speed = 10f;
     [SerializeField] float lifeTime = 2f;
     [SerializeField] GameObject trailPrefab;
+    [SerializeField] protected float damage = 10;
 
     public Vector3 direction;
     Teleport teleportScript;
@@ -29,7 +30,7 @@ public class Projectile : MonoBehaviour
         transform.position += (direction * speed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision other)
+    protected virtual void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Plane") || other.gameObject.layer == LayerMask.GetMask("ground"))
         {

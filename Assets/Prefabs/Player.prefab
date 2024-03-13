@@ -1268,7 +1268,7 @@ MonoBehaviour:
   impulseForce: 11
   particlePrefab: {fileID: 1743301284569550, guid: 209f04842098f8846857dfb0c3ed202d, type: 3}
   mouseTimePressed: 0
-  bulletPrefab: {fileID: -6872743022764476877, guid: e0da7ba467e10e84c9c475545ac24ddf, type: 3}
+  bulletPrefab: {fileID: 5324257386026863216, guid: e0da7ba467e10e84c9c475545ac24ddf, type: 3}
 --- !u!54 &6788982478888614141
 Rigidbody:
   m_ObjectHideFlags: 0

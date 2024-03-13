@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CyborgProjectile : MonoBehaviour
+public class CyborgProjectile : Projectile
 {
     [SerializeField] float lerpSpeed = 2f;
-    [SerializeField] float projectileSpeed = 10f;
 
     Vector3 initialScale = Vector3.zero;
     Vector3 finalScale = Vector3.one;
-
-    Transform transform;
 
     float alpha;
 
@@ -20,10 +17,9 @@ public class CyborgProjectile : MonoBehaviour
     void Start()
     {
         isLerpFinished = false;
-        transform = GetComponent<Transform>();
     }
 
-    void Update()
+    protected override void Update()
     {
         if (!isLerpFinished)
         {
@@ -38,8 +34,13 @@ public class CyborgProjectile : MonoBehaviour
 
         if (isLerpFinished)
         {
-            transform.position += transform.forward * projectileSpeed * Time.deltaTime;
+            transform.position += transform.forward * base.projectileSpeed * Time.deltaTime;
             Destroy(gameObject, 3f);
         }
+    }
+
+    protected override void OnCollisionEnter(Collision other)
+    {
+        
     }
 }

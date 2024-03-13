@@ -5,11 +5,11 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] bool canTpOnRicochet = false;
-    [SerializeField] float speed = 10f;
     [SerializeField] float lifeTime = 2f;
     [SerializeField] GameObject trailPrefab;
     [SerializeField] protected float damage = 10;
 
+    public float projectileSpeed = 10f;
     public Vector3 direction;
     Teleport teleportScript;
 
@@ -25,9 +25,9 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        transform.position += (direction * speed * Time.deltaTime);
+        transform.position += (direction * projectileSpeed * Time.deltaTime);
     }
 
     protected virtual void OnCollisionEnter(Collision other)

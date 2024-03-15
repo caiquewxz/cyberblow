@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6780043178854295067}
   - component: {fileID: 135851096352533360}
   - component: {fileID: 2318439466711930870}
+  - component: {fileID: 8538605167546341146}
   m_Layer: 0
   m_Name: EnemyProjectile (2)
   m_TagString: Untagged
@@ -100,7 +101,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -118,8 +119,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a8394310261164ba62a745ca1bc477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpSpeed: 2
+  canTpOnRicochet: 0
+  lifeTime: 2
+  trailPrefab: {fileID: 0}
+  damage: 10
   projectileSpeed: 10
+  direction: {x: 0, y: 0, z: 0}
+  lerpSpeed: 2
+--- !u!114 &8538605167546341146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539137733976531580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aaf018b8fdbfaf45b7cc47a0aaf49f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTpOnRicochet: 0
+  lifeTime: 2
+  trailPrefab: {fileID: 0}
+  damage: 10
+  projectileSpeed: 10
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &2516611803187711344
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +157,7 @@ GameObject:
   - component: {fileID: 818640070895366250}
   - component: {fileID: 5456358370842672366}
   - component: {fileID: 2964899066824267161}
+  - component: {fileID: 4039433536908435339}
   m_Layer: 0
   m_Name: EnemyProjectile (1)
   m_TagString: Untagged
@@ -220,7 +245,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -238,8 +263,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a8394310261164ba62a745ca1bc477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpSpeed: 2
+  canTpOnRicochet: 0
+  lifeTime: 2
+  trailPrefab: {fileID: 0}
+  damage: 10
   projectileSpeed: 10
+  direction: {x: 0, y: 0, z: 0}
+  lerpSpeed: 2
+--- !u!114 &4039433536908435339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2516611803187711344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aaf018b8fdbfaf45b7cc47a0aaf49f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTpOnRicochet: 0
+  lifeTime: 2
+  trailPrefab: {fileID: 0}
+  damage: 10
+  projectileSpeed: 10
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &6763001254579444486
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +335,7 @@ GameObject:
   - component: {fileID: 8948847157950892871}
   - component: {fileID: 5727618613375752006}
   - component: {fileID: 1937744516063753687}
+  - component: {fileID: 6217427910981272429}
   m_Layer: 0
   m_Name: EnemyProjectile
   m_TagString: Untagged
@@ -304,7 +353,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -1.5628948, y: 1.9441688, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7869787267555311465}
@@ -374,7 +423,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -392,5 +441,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a8394310261164ba62a745ca1bc477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpSpeed: 2
+  canTpOnRicochet: 0
+  lifeTime: 2
+  trailPrefab: {fileID: 0}
+  damage: 10
   projectileSpeed: 10
+  direction: {x: 0, y: 0, z: 0}
+  lerpSpeed: 2
+--- !u!114 &6217427910981272429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590269954977618632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aaf018b8fdbfaf45b7cc47a0aaf49f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTpOnRicochet: 0
+  lifeTime: 2
+  trailPrefab: {fileID: 0}
+  damage: 100
+  projectileSpeed: 10
+  direction: {x: 0, y: 0, z: 0}

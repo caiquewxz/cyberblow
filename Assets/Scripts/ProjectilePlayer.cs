@@ -8,13 +8,11 @@ public class ProjectilePlayer : Projectile
     {
         base.OnCollisionEnter(collision);
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("HitEnemy");
             HealthComponent enemyHealth = collision.gameObject.GetComponent<HealthComponent>();
             enemyHealth?.TakeDamage(damage);
             Destroy(gameObject);
         }
-
     }
 }

@@ -34,7 +34,6 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Plane") || other.gameObject.layer == LayerMask.GetMask("ground"))
         {
-            Debug.Log("colidiu");
             Vector3 normal = other.contacts[0].normal;
             direction = Vector3.Reflect(direction, normal).normalized;
         }

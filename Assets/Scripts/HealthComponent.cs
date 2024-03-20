@@ -10,7 +10,6 @@ public class HealthComponent : MonoBehaviour
     public UnityEvent OnDie;
     public bool isDead;
 
-    // Start is called before the first frame update
     void Start()
     {
         Health = MaxHealth;

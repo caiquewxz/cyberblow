@@ -9,6 +9,7 @@ TagManager:
   - CyborgWeaponMesh
   - Enemy
   - PlayerMesh
+  - Wall
   layers:
   - Default
   - TransparentFX

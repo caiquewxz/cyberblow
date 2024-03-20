@@ -123,41 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1889678939 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3450759737484259284, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-  m_PrefabInstance: {fileID: 6053383797934249229}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1889678940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889678939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb544e893f3eeae429d76c1c304c68ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 0
-  MaxHealth: 100
-  OnDie:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1889678940}
-        m_TargetAssemblyTypeName: HealthComponent, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  isDead: 0
 --- !u!1001 &6053383797934249229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -210,45 +175,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4284917599276150915, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4284917599276150915, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-      propertyPath: m_TagString
-      value: PlayerMesh
-      objectReference: {fileID: 0}
-    - target: {fileID: 4568875062670159548, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-      propertyPath: m_Size.x
-      value: 0.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 4568875062670159548, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-      propertyPath: m_Size.y
-      value: 1.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 4568875062670159548, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-      propertyPath: m_Size.z
-      value: 1.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4568875062670159548, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-      propertyPath: m_Center.y
-      value: 0.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 4568875062670159548, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7032156428256961310, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.7389008
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3450759737484259284, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1889678940}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

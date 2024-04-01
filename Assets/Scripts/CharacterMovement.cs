@@ -26,6 +26,15 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        if (onGround)
+        {
+            Debug.Log("On Ground");
+        }
+        else
+        {
+            Debug.Log("Off Ground");
+        }
+
         Collider[] collidingFloor = Physics.OverlapSphere(checkGround.position, 0.2f, groundMask);
         onGround = collidingFloor.Length > 0;
         animator.SetBool("InAir", !onGround);

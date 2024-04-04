@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7c4f20e689f6c4cbc5bb48dbbb341b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTpOnRicochet: 0
   lifeTime: 2
   trailPrefab: {fileID: 947250871755532473, guid: 13594c31453df7640aa68e9ddf945de9, type: 3}
   damage: 10

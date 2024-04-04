@@ -10,6 +10,7 @@ public class ShootComponent : MonoBehaviour
     [SerializeField] GameObject particlePrefab;
     [SerializeField] float mouseTimePressed = 0f;
     public MeshRenderer playerRenderer;
+    public bool canShoot;
 
     float impulseParameter = 0f;
 
@@ -22,15 +23,14 @@ public class ShootComponent : MonoBehaviour
 
     void Start()
     {
+        canShoot = true;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        
-
-        if(Input.GetKeyUp(KeyCode.Mouse0))
+        if(Input.GetKeyUp(KeyCode.Mouse0) && canShoot)
         {
             mouseTimePressed = 0f;
             Vector3 bulletRotation = GetBulletRotation();

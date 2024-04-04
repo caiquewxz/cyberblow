@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ProjectileTeleport : Projectile
 {
-
     private Vector3 oldLocalPosition;
     Teleport teleportScript;
     protected override void Start()

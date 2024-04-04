@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6076894734091240968}
   m_Layer: 0
   m_Name: Capsule 2
-  m_TagString: Untagged
+  m_TagString: GreenAmmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7c4f20e689f6c4cbc5bb48dbbb341b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTpOnRicochet: 0
   lifeTime: 2
   trailPrefab: {fileID: 947250871755532473, guid: 975c4e0884b79f04b814bc058ee67e90, type: 3}
   damage: 30

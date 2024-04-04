@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - PlayerMesh
   - Wall
+  - BlueAmmoText
+  - AcquiredAmmoText
   layers:
   - Default
   - TransparentFX

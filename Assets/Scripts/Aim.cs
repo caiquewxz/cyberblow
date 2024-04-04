@@ -30,7 +30,6 @@ public class Aim : MonoBehaviour
                     angle = 360f - angle;
                 }
 
-                Debug.Log("Mouse Angle " + angle);
                 aimReference.localRotation = Quaternion.Euler(0, 0,-angle);
     }
 }

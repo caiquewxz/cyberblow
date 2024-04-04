@@ -128,6 +128,7 @@ MonoBehaviour:
   damage: 10
   projectileSpeed: 15
   direction: {x: 0, y: 0, z: 0}
+  impulseFactor: 1
 --- !u!54 &2300734943447743878
 Rigidbody:
   m_ObjectHideFlags: 0

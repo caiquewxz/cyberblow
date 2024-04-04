@@ -16,8 +16,27 @@ public class CharacterMovement : MonoBehaviour
 
     Animator animator;
 
+    public static CharacterMovement instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<CharacterMovement>();
+            }
+
+            return _instance;
+        }
+    }
+    private static CharacterMovement _instance;
+
     void Start()
     {
+        if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        
         rb = GetComponent<Rigidbody>();
         checkGround = transform.Find("CheckGround");
         groundMask = LayerMask.GetMask("Ground");
@@ -26,15 +45,8 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (onGround)
-        {
-            Debug.Log("On Ground");
-        }
-        else
-        {
-            Debug.Log("Off Ground");
-        }
-
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        
         Collider[] collidingFloor = Physics.OverlapSphere(checkGround.position, 0.2f, groundMask);
         onGround = collidingFloor.Length > 0;
         animator.SetBool("InAir", !onGround);

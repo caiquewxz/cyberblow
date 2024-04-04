@@ -27,6 +27,16 @@ public class ShootComponent : MonoBehaviour
 
     void Update()
     {
+        
+
+        if(Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            mouseTimePressed = 0f;
+            Vector3 bulletRotation = GetBulletRotation();
+            Projectile spawnedProjectile = Shoot(bulletRotation);
+            ThrowCharacter(bulletRotation, impulseParameter * spawnedProjectile.impulseFactor);
+        }
+        
         if (Input.GetKey(KeyCode.Mouse0))
         {
             mouseTimePressed += Time.deltaTime;
@@ -45,14 +55,6 @@ public class ShootComponent : MonoBehaviour
             }
 
         }
-
-        if(Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            mouseTimePressed = 0f;
-            Vector3 bulletRotation = GetBulletRotation();
-            Shoot(bulletRotation);
-            ThrowCharacter(bulletRotation, impulseParameter);
-        }
     }
 
     Vector3 GetBulletRotation()
@@ -64,13 +66,14 @@ public class ShootComponent : MonoBehaviour
         return direction;
     }
 
-    public void Shoot(Vector3 bulletRotation)
+    public Projectile Shoot(Vector3 bulletRotation)
     {
         PlayShootingAnimation();
         SpawnShootParticle();
-        Projectile newProjecile = Instantiate<Projectile>(bulletPrefab, firePoint.position, Quaternion.identity);
-        newProjecile.direction = bulletRotation;
+        Projectile newProjectile = Instantiate<Projectile>(bulletPrefab, firePoint.position, Quaternion.identity);
+        newProjectile.direction = bulletRotation;
 
+        return newProjectile;
     }
 
     void ThrowCharacter(Vector3 direction, float timePressed)

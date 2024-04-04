@@ -14,6 +14,8 @@ TagManager:
   - AcquiredAmmoText
   - StartPoint
   - CheckPoint
+  - GreenAmmo
+  - WinText
   layers:
   - Default
   - TransparentFX

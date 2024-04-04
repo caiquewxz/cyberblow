@@ -8,6 +8,7 @@ public class ProjectileTeleport : Projectile
     private Vector3 oldLocalPosition;
     Teleport teleportScript;
     private ShootComponent shootComponent;
+    
     protected override void Start()
     {
         base.Start();

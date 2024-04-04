@@ -60,11 +60,11 @@ public class ShootComponent : MonoBehaviour
             }
             else if (mouseTimePressed > 1f) 
             {
-                impulseParameter = 10f;
+                impulseParameter = 5f;
             }
             else if (mouseTimePressed > 2f)
             {
-                impulseParameter = 20f;
+                impulseParameter = 10f;
             }
 
         }

@@ -21,8 +21,6 @@ public class CyborgAttack : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
-        cyborgEnemyMesh = GameObject.FindGameObjectWithTag("CyborgEnemyMesh").GetComponent<MeshRenderer>();
-        cyborgWeaponMesh = GameObject.FindGameObjectWithTag("CyborgWeaponMesh").GetComponent<MeshRenderer>();
     }
 
     void Update()

@@ -6,6 +6,7 @@ public class CollectableAmmo : MonoBehaviour
 {
     [SerializeField] Projectile bulletPrefab;
     [SerializeField] GameObject player;
+    [SerializeField] private Material bulletMaterial;
 
     ShootComponent shootComponent;
 
@@ -13,7 +14,7 @@ public class CollectableAmmo : MonoBehaviour
     {
         if(player == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = CharacterMovement.instance.gameObject;
         }
 
         shootComponent = player.GetComponent<ShootComponent>();
@@ -24,6 +25,7 @@ public class CollectableAmmo : MonoBehaviour
         if(other.gameObject == player)
         {
             shootComponent.bulletPrefab = bulletPrefab;
+            shootComponent.playerRenderer.SetMaterials(new List<Material>(){ bulletMaterial });
             Destroy(this.gameObject);
         }
     }

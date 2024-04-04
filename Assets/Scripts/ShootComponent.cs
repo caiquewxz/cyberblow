@@ -9,6 +9,7 @@ public class ShootComponent : MonoBehaviour
     [SerializeField] float impulseForce = 10f;
     [SerializeField] GameObject particlePrefab;
     [SerializeField] float mouseTimePressed = 0f;
+    public MeshRenderer playerRenderer;
 
     float impulseParameter = 0f;
 

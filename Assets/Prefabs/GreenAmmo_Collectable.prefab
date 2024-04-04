@@ -120,3 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6076894734091240968, guid: 948d6b2490eed9d43826348481224431, type: 3}
   player: {fileID: 0}
+  bulletMaterial: {fileID: 2100000, guid: 8102463e655e8144ea9adcc5a644f634, type: 2}

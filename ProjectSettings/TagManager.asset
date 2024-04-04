@@ -12,6 +12,8 @@ TagManager:
   - Wall
   - BlueAmmoText
   - AcquiredAmmoText
+  - StartPoint
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

@@ -13,14 +13,18 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform startPoint;
 
+    private CheckPoint checkPoint;
+
     void Start()
     {
         Health = MaxHealth;
 
         if (player == null)
         {
-            GameObject.FindGameObjectWithTag("Player");
+            player = CharacterMovement.instance.transform;
         }
+
+        checkPoint = player.GetComponent<CheckPoint>();
     }
 
     public void TakeDamage(float damage)
@@ -46,7 +50,7 @@ public class HealthComponent : MonoBehaviour
     {
         if (startPoint != null)
         {
-            player.position = startPoint.position;
+            player.position = checkPoint.currentCheckPoint;
         }
 
         //isDead = false;

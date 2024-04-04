@@ -7,6 +7,7 @@ public class ProjectileTeleport : Projectile
 {
     private Vector3 oldLocalPosition;
     Teleport teleportScript;
+    private ShootComponent shootComponent;
     protected override void Start()
     {
         base.Start();
@@ -14,12 +15,17 @@ public class ProjectileTeleport : Projectile
 
         Camera.main.transform.parent = transform;
         teleportScript = GetComponent<Teleport>();
+
+        shootComponent = CharacterMovement.instance.GetComponent<ShootComponent>();
+
+        shootComponent.canShoot = false;
     }
 
     protected override void BeforeDestroy()
     {
         Camera.main.transform.parent = CharacterMovement.instance.transform;
         Camera.main.transform.localPosition = oldLocalPosition;
+        shootComponent.canShoot = true;
     }
     protected override void OnCollisionEnter(Collision other)
     {

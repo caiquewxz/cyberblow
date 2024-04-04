@@ -9,12 +9,13 @@ public class ShootComponent : MonoBehaviour
     [SerializeField] float impulseForce = 10f;
     [SerializeField] GameObject particlePrefab;
     [SerializeField] float mouseTimePressed = 0f;
+    [SerializeField] private float shootDelay = 1.5f;
     public MeshRenderer playerRenderer;
     public bool canShoot;
+    public Projectile bulletPrefab;
 
     float impulseParameter = 0f;
-
-    public Projectile bulletPrefab;
+    private float shootCooldown;
 
     Rigidbody rb;
 
@@ -30,6 +31,17 @@ public class ShootComponent : MonoBehaviour
 
     void Update()
     {
+        if (shootCooldown < shootDelay)
+        {
+            shootCooldown += Time.deltaTime;
+            canShoot = false;
+        }
+        else if (shootCooldown >= shootDelay)
+        {
+            shootCooldown = shootDelay;
+            canShoot = true;
+        }
+        
         if(Input.GetKeyUp(KeyCode.Mouse0) && canShoot)
         {
             mouseTimePressed = 0f;
@@ -42,15 +54,15 @@ public class ShootComponent : MonoBehaviour
         {
             mouseTimePressed += Time.deltaTime;
 
-            if(mouseTimePressed < 1f)
+            if(mouseTimePressed < .5f)
             {
                 impulseParameter = 1f;
             }
-            else if (mouseTimePressed > 1.5f) 
+            else if (mouseTimePressed > 1f) 
             {
                 impulseParameter = 10f;
             }
-            else if (mouseTimePressed > 3f)
+            else if (mouseTimePressed > 2f)
             {
                 impulseParameter = 20f;
             }
@@ -69,12 +81,20 @@ public class ShootComponent : MonoBehaviour
 
     public Projectile Shoot(Vector3 bulletRotation)
     {
-        PlayShootingAnimation();
-        SpawnShootParticle();
-        Projectile newProjectile = Instantiate<Projectile>(bulletPrefab, firePoint.position, Quaternion.identity);
+        Projectile newProjectile = null;
+        
+        if (canShoot)
+        {
+            PlayShootingAnimation();
+            SpawnShootParticle();
+            newProjectile = Instantiate<Projectile>(bulletPrefab, firePoint.position, Quaternion.identity);
+        }
         newProjectile.direction = bulletRotation;
-
+        shootCooldown = 0;
+        canShoot = false;
+        
         return newProjectile;
+
     }
 
     void ThrowCharacter(Vector3 direction, float timePressed)

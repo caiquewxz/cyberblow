@@ -688,6 +688,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4275420506907746899, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
+      propertyPath: impulseForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4453906448733900892, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
       propertyPath: m_LocalScale.x
       value: 7.298549
@@ -758,11 +762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7032156428256961310, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 125.31
+      value: -6.8
       objectReference: {fileID: 0}
     - target: {fileID: 7032156428256961310, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.17
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8118099152553163884, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
       propertyPath: m_LocalScale.x
@@ -779,6 +783,14 @@ PrefabInstance:
     - target: {fileID: 8118099152553163884, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.696
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661334373343435554, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
+      propertyPath: maxSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661334373343435554, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
+      propertyPath: jumpStrength
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8811245252400651493, guid: c1ab5fe62548c3241970e9f2bd4eb8ca, type: 3}
       propertyPath: m_LocalScale.x

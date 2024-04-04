@@ -8,7 +8,7 @@ public class ProjectilePlayer : Projectile
     {
         base.OnCollisionEnter(collision);
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             HealthComponent enemyHealth = collision.gameObject.GetComponent<HealthComponent>();
             enemyHealth?.TakeDamage(damage);

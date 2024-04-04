@@ -124,9 +124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTpOnRicochet: 1
-  speed: 30
   lifeTime: 2
   trailPrefab: {fileID: 947250871755532473, guid: 84d8ec2ffeb667e44abf6d55f09f5f92, type: 3}
+  damage: 10
+  projectileSpeed: 30
   direction: {x: 0, y: 0, z: 0}
 --- !u!114 &4758619120840304588
 MonoBehaviour:

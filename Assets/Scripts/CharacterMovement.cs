@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
     bool onGround;
     Transform checkGround;
     LayerMask groundMask;
+    AudioSource jumpSfx;
 
     Animator animator;
 
@@ -36,7 +37,7 @@ public class CharacterMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+        jumpSfx = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         checkGround = transform.Find("CheckGround");
         groundMask = LayerMask.GetMask("Ground");
@@ -61,6 +62,11 @@ public class CharacterMovement : MonoBehaviour
         if (onGround && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector2.up * jumpStrength, ForceMode.Impulse);
+
+            if(jumpSfx != null)
+            {
+                jumpSfx.Play();
+            }
         }
         LimitVelocity();
         RotationControl();

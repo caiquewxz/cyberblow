@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ProjectilePlayer : Projectile
 {
+    [SerializeField] GameObject projectileDestroySfx;
+
     protected override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
@@ -14,5 +16,10 @@ public class ProjectilePlayer : Projectile
             enemyHealth?.TakeDamage(damage);
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(projectileDestroySfx);
     }
 }
